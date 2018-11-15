@@ -1,0 +1,45 @@
+!**********************************************************************!
+!**********************************************************************!
+!
+! file: "interpolprm.fi"
+!
+! author: Juri Barthel
+!         juribarthel@gmx.de
+!         October 2008
+!
+! purpose: declaration and definition
+!          of global interpolation parameters
+!          used by interpol.f90
+!
+!**********************************************************************!
+!**********************************************************************!
+!* This program is free software: you can redistribute it and/or modify
+!* it under the terms of the GNU General Public License as published by
+!* the Free Software Foundation, either version 3 of the License, or   
+!* (at your option) any later version.                                 
+!*                                                                     
+!* This program is distributed in the hope that it will be useful,     
+!* but WITHOUT ANY WARRANTY; without even the implied warranty of      
+!* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the       
+!* GNU General Public License for more details.                        
+!*                                                                     
+!* You should have received a copy of the GNU General Public License   
+!* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+!**********************************************************************!
+
+
+!**********************************************************************!
+! cubic interpolation parameter
+! choose a value between -0.5 and -1.0
+! this modulated the interpolation kernel
+! -0.5 = most sharp, but wiggles with negative values at outer regions
+! -1.0 = broader, but no negative values
+      real*4, parameter :: prm_interpol_cubic = -0.75
+!**********************************************************************!
+
+
+!**********************************************************************!
+! maximum array size for fourier transforms
+! arrays with larger sizes will be ignored
+      integer*4, parameter :: prm_fft_max = 2048
+!**********************************************************************!

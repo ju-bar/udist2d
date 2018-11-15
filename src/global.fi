@@ -1,0 +1,60 @@
+!---------------------------------------------------------------
+!
+! file: globals.fi
+! author: juri barthel (juribarthel@gmx.de)
+! 21.01.2010
+!
+! fortran include
+! purpose: global parameters and variables for program "udist2d"
+!
+!---------------------------------------------------------------
+!**********************************************************************!
+!* This program is free software: you can redistribute it and/or modify
+!* it under the terms of the GNU General Public License as published by
+!* the Free Software Foundation, either version 3 of the License, or   
+!* (at your option) any later version.                                 
+!*                                                                     
+!* This program is distributed in the hope that it will be useful,     
+!* but WITHOUT ANY WARRANTY; without even the implied warranty of      
+!* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the       
+!* GNU General Public License for more details.                        
+!*                                                                     
+!* You should have received a copy of the GNU General Public License   
+!* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+!**********************************************************************!
+
+! global parameters
+      integer*4, parameter :: ndmin = 32        ! minimum image size
+      integer*4, parameter :: ndmax = 2048      ! maximum image size
+      real*4, parameter :: d2r = 0.0174533      ! degree to radian factor
+      real*4, parameter :: pi = 3.14159265      ! Pi
+      real*4, parameter :: cip = -0.8           ! cubic interpolation parameter   
+! global variables
+      integer*4 :: nerr                         ! error code
+      integer*4 :: ndbg                         ! debug export flag
+      integer*4 :: nsil                         ! message flag
+      integer*4 :: numw                         ! number of warnings
+      integer*4 :: nume                         ! number of errors
+      character(len=600) :: sdbgmsg             ! debug message
+      common /glbflg/ ndbg, nsil, sdbgmsg
+      common /glbprm/ nerr, numw, nume
+! input variables      
+      character(len=600) :: sprmfile            ! input parameter file name
+      character(len=600) :: simgfile            ! input image file name
+      character(len=600) :: soutfile            ! output imgage file name
+      integer*4 :: nix, niy                     ! input discretization
+      integer*4 :: ndoff                        ! file data offset in byte
+      real*4 :: sixi, sixj, siyi, siyj          ! input sampling [nm/pix]
+      integer*4 :: nox, noy                     ! output discretization
+      real*4 :: sout                            ! output sampling [nm/pix]
+      integer*4 :: ndtype                       ! file data type option
+      integer*4 :: nwrap                        ! do periodic wrap around
+      integer*4 :: noverw                       ! do overwrite existing output files
+      integer*4 :: rpii, rpij, rpoi, rpoj       ! reference pixel numbers in input and output 
+      common /inprm/ nix, niy, sixi, sixj, siyi, siyj, nox, noy, sout, &
+     &               ndoff, ndtype, nwrap, noverw, rpii, rpij, rpoi, rpoj
+      common /instr/ sprmfile, simgfile, soutfile
+
+!---------------------------------------------------------------
+! end of global parameter and variable section
+!---------------------------------------------------------------

@@ -1,0 +1,10 @@
+4                                ! input data type option (0=float 32-bit, 1=float 64-bit, 2=int 8-bit, 3=int 16-bit, 4=int 32-bit)
+0                                ! byte offset of image data in input file
+2048, 2048                       ! dimension of input data array (cols and rows)
+0.14476E-01, -0.66353E-04, -0.29586E-03, 0.14568E-01    ! sampling of input data (xi, xj, yi, yj) [nm/pix] (x=xi*i+xj*j, y=yi*i+yj*j)
+1025, 1025                       ! reference pixel (fix position) in input data
+2048, 2048                       ! dimension of output data array (cols and rows)
+0.0145                           ! sampling of output data [nm/pix]
+1025, 1025                       ! reference pixel (fix position) in output data
+1                                ! flag: do periodic wrap around
+1                                ! flag: do over-write existing output files
