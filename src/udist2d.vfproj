@@ -60,5 +60,6 @@
 		<File RelativePath=".\interpol.f90"/>
 		<File RelativePath=".\udist2d.f90"/>
 		<File RelativePath=".\udistsubs.f90"/></Filter>
-		<File RelativePath="..\gpl-3.txt"/></Files>
+		<File RelativePath="..\LICENSE.txt"/>
+		<File RelativePath="..\README.txt"/></Files>
 	<Globals/></VisualStudioProject>

@@ -1,0 +1,65 @@
+PROGRAM: udist2d
+
+Author: Juri Barthel
+        Ernst Ruska-Centre
+        Forschungszentrum Jülich GmbH, 52425 Jülich, Germany
+
+Copyright (c) 2010 - 2018 : Forschungszentrum Jülich GmbH
+
+---------------------------------------------------------------------------
+
+Apply a linear (affine) image transformation from a non-orthogonal
+and anisotropic sampling to an orthogonal isotropic sampling.
+
+---------------------------------------------------------------------------
+
+This program is free software: you can redistribute it and/or modify 
+it under the terms of the GNU General Public License as published by 
+the Free Software Foundation, either version 3 of the License, or    
+(at your option) any later version.                                  
+
+This program is distributed in the hope that it will be useful,      
+but WITHOUT ANY WARRANTY; without even the implied warranty of       
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        
+GNU General Public License for more details.                         
+
+You should have received a copy of the GNU General Public License    
+along with this program. If not, see <http://www.gnu.org/licenses/>. 
+
+---------------------------------------------------------------------------
+
+USAGE:
+
+UDIST2D [-prm 'parameter file name', e.g. 'udist.prm']
+        [-in  'input image data (binary) file name', e.g. 'img_001.dat']
+        [-out 'output image data (binary) file name', e.g. 'img_001ud.dat']
+        [/sil deactivates console output]
+        [/dbg activates extra debug console output]
+
+---------------------------------------------------------------------------
+
+PARAMETER FILE:
+
+The parameter file is an ascii text file with fix structure.
+
+Parameter file example:
+line 01: 3                                ! input data type option (0=float 32-bit, 1=float 64-bit, 2=int 8-bit, 3=int 16-bit, 4=int 32-bit)
+line 02: 0                                ! byte offset of image data in input file
+line 03: 2048, 2048                       ! dimension of input data array (cols and rows)
+line 04: -0.48149E-04, 0.12892E-01, -0.12758E-01, 0.28085E-03    ! sampling of input data (xi, xj, yi, yj) [nm/pix] (x=xi*i+xj*j, y=yi*i+yj*j)
+line 05: 1025, 1025                       ! reference pixel (fix position) in input data
+line 06: 2048, 2048                       ! dimension of output data array (cols and rows)
+line 07: 0.0125                           ! sampling of output data [nm/pix]
+line 08: 1025, 1025                       ! reference pixel (fix position) in output data
+line 09: 0                                ! flag: do periodic wrap around
+line 10: 1                                ! flag: do over-write existing output files
+... any content below line 08 will be ignored.
+
+---------------------------------------------------------------------------
+
+ HISTORY:
+
+100121:JB: Version 0.1b
+181115:JB: Version 0.11b
+	Migration to Visual Studio 2017 and Intel Fortran 18
+	Adaptations to current core routines.
