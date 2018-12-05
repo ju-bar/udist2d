@@ -53,7 +53,7 @@ line 07: 0.0125                           ! sampling of output data [nm/pix]
 line 08: 1025, 1025                       ! reference pixel (fix position) in output data
 line 09: 0                                ! flag: do periodic wrap around
 line 10: 1                                ! flag: do over-write existing output files
-... any content below line 08 will be ignored.
+... any content below line 10 will be ignored.
 
 ---------------------------------------------------------------------------
 
